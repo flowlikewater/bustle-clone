@@ -3,18 +3,24 @@
   <h5>By {{model.mainstory.writer}} at {{model.mainstory.date}}</h5>
   <br>
   <img src="{{model.mainstory.imagetop}}" style='width: 700px; height:300px;'/>
+  <br>
+  <br>
   <p>{{model.mainstory.body}}</p>
 
+  {{edit-post article=model.mainstory update='update'}}
 
-<br>
+  <br>
 
-<br>
 
-<h1><i>Scroll Down for More Articles</i></h1>
-<br>
+  <br>
+
+  <br>
 
 </div>
 
+<div class='container' style='background: rgba(46, 228, 255, 0.5); text-align: center'>
+  <h1 style='margin-top: 10px; color: white'><i>Scroll Down for More Articles</i></h1>
+</div>
 
 <div class='container'>
   {{#each model.article as |article|}}

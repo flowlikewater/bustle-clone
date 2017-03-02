@@ -6,7 +6,8 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       // articles: this.store.findAll('article'),
       topthrees: this.store.findAll('topthree'),
-      articles: this.store.findAll('article')
+      articles: this.store.findAll('article'),
+      reviews: this.store.findAll('review')
     });
   },
   actions: {

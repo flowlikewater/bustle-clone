@@ -1,0 +1,28 @@
+<div class='container'>
+
+  {{#each model.topthrees as |topthree|}}
+      {{top-three-articles topthree=topthree}}
+  {{/each}}
+
+</div>
+
+<br>
+<div class='container' style='background: rgba(46, 228, 255, 0.5); text-align: center'>
+  <h1 style='margin-top: 10px; color: white'><i>Today's Top Stories</i></h1>
+</div>
+
+<div class='container'>
+  {{#each model.articles as |article|}}
+      {{infinite-scroll article=article}}
+  {{/each}}
+</div>
+
+<br>
+<br>
+
+<div class='container' style='text-align: center'>
+  {{new-entry saveArticle="saveArticle"}}
+</div>
+
+<br>
+<br>

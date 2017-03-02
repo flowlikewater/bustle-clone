@@ -1,0 +1,14 @@
+
+<div class='row'>
+  <div class='col-md-6'>
+  <img style='height: 240px; width: 600px; margin-top: 50px;' src="{{article.imagetop}}"/>
+  </div>
+
+  <div class='col-md-6' style='height: 260px; margin-left: -20px; margin-top: 40px; background: rgba(255,255,255,0.5)'>
+  {{#link-to 'article' article.id}}
+    <h1 {{action 'refreshPage'}}>{{article.title}}</h1>
+  {{/link-to}}
+
+  <p>{{article.body}}</p>
+  </div>
+</div>

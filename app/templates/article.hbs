@@ -1,0 +1,23 @@
+<div class='container' style='text-align: center; width: 700px'>
+  <h2>{{model.mainstory.title}}</h2>
+  <h5>By {{model.mainstory.writer}} at {{model.mainstory.date}}</h5>
+  <br>
+  <img src="{{model.mainstory.imagetop}}" style='width: 700px; height:300px;'/>
+  <p>{{model.mainstory.body}}</p>
+
+
+<br>
+
+<br>
+
+<h1><i>Scroll Down for More Articles</i></h1>
+<br>
+
+</div>
+
+
+<div class='container'>
+  {{#each model.article as |article|}}
+      {{infinite-scroll article=article}}
+  {{/each}}
+</div>

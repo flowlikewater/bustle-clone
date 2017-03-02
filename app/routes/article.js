@@ -4,7 +4,8 @@ export default Ember.Route.extend({
   model(params) {
     return {
       mainstory:this.store.findRecord('article', params.article_id),
-      article:this.store.findAll('article')
+      article:this.store.findAll('article'),
+      reviews: this.store.findAll('review')
     };
   },
   actions: {
@@ -12,11 +13,16 @@ export default Ember.Route.extend({
     Object.keys(params).forEach(function(key){
       if(params[key]!==undefined){
         mainstory.set(key,params[key]);
-        }
-      });
-      mainstory.then(function(article){
-        article.save();
-      });
+      }
+    });
+    mainstory.then(function(article){
+      article.save();
+    });
+    window.location.reload(true);
+  },
+  saveReview(params) {
+      var newReview = this.store.createRecord('review', params);
+      newReview.save();
       window.location.reload(true);
     }
   }

@@ -7,5 +7,6 @@ export default DS.Model.extend({
   imagetop: DS.attr(),
   body: DS.attr(),
   imagebottom: DS.attr(),
-  source: DS.attr()
+  source: DS.attr(),
+  review: DS.hasMany('review', {async: true})
 });

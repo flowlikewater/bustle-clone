@@ -22,9 +22,14 @@ export default Ember.Route.extend({
   },
   saveReview(params) {
       var newReview = this.store.createRecord('review', params);
-      newReview.save();
+      var article = params.article;
+      debugger;
+      article.get('reviews').addObject(newReview);
+      newReview.save().then(function(){
+        return article.save();
+      });
       window.location.reload(true);
     }
-  }
+  },
 });
 // promise resolution

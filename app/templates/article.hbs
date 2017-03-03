@@ -13,15 +13,15 @@
   <h3>Reviews</h3>
 
   <div class='row' style='background: white; text-align: left; width: 725px; box-shadow: 3px 3px 1px #d3d3d3; padding: 20px;'>
-    {{#each model.reviews as |review|}}
-      <h5>Rating: {{review.rating}}    - by {{review.author}}</h5>
-      <p>Review: {{review.content}}</p>
+    {{#each model.mainstory.reviews as |review|}}
+          <h5>Rating: {{review.rating}}    - by {{review.author}}</h5>
+          <p>Review: {{review.content}}</p>
     {{/each}}
   </div>
 
   <br>
 
-  {{new-review saveReview="saveReview" mainstory=model}}
+  {{new-review saveReview="saveReview" article=model.mainstory}}
 
   <br>
 

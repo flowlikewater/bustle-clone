@@ -8,5 +8,5 @@ export default DS.Model.extend({
   body: DS.attr(),
   imagebottom: DS.attr(),
   source: DS.attr(),
-  review: DS.hasMany('review', {async: true})
+  reviews: DS.hasMany('review', {async: true})
 });
